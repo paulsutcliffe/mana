@@ -1,0 +1,22 @@
+header {
+  @include background-pattern('/assets/bg-mantel.jpg');
+  li a {
+    float: right;
+    color: $dark;
+  }
+  border-bottom: 4px solid white;
+}
+
+body {
+  @include background-pattern('/assets/bg-puntos.jpg');
+}
+
+.container {
+  float: none;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 45px;
+  .img-responsive {
+    margin: 0 auto;
+  }
+}

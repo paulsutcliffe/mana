@@ -1,0 +1,6 @@
+@mixin background-pattern($imgpath) {
+    background: {
+        image: url($imgpath);
+        repeat: repeat;
+    }
+}
