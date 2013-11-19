@@ -4,30 +4,15 @@
     .region-title
       %h1= page_title!('Listando productos')
 
-    .region
+    .region.sidebar-categorias.pull-left
+      %ul
+      - @categorias.each do |categoria|
+        %li= link_to categoria.nombre, categoria_productos_path(categoria), remote: true
+
+    .region.lista-de-productos
       - if current_admin
         .admin-control
           = link_to 'Crear Producto', new_producto_path, class: 'btn btn-primary'
 
-      .table-responsive
-        %table.table
-          %tr
-            %th Nombre
-            %th Precio en oferta
-            %th Precio normal
-            %th Codigo
-            %th Foto
-            %th
-            %th
-            %th
-
-          - @productos.each do |producto|
-            %tr
-              %td= producto.nombre
-              %td= producto.precio_en_oferta
-              %td= producto.precio_normal
-              %td= producto.codigo
-              %td= producto.foto
-              %td= link_to 'Ver', producto, class: 'btn btn-info'
-              %td= link_to 'Editar', edit_producto_path(producto), class: 'btn btn-success'
-              %td= link_to 'Eliminar', producto, :method => :delete, :data => { :confirm => '¿Estás Seguro?' }, class: 'btn btn-danger'
+      #productos
+        = render @productos

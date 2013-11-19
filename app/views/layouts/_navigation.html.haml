@@ -3,6 +3,7 @@
   %li= link_to 'Productos', productos_path
   %li= link_to 'Quiénes Somos', quienes_somos_path
   - if current_admin
+    %li= link_to 'Categorias', categorias_path
     %li= link_to 'Mensajes', contactos_path
     %li= link_to 'Cerrar Sesion', destroy_admin_session_path, method: :delete
   - else
