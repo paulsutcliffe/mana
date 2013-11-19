@@ -1,0 +1,15 @@
+#region-categorias.container
+  .region
+    .region-title
+      %h1= page_title!('categoria')
+
+  .region
+    %p
+      %b Nombre:
+      = @categoria.nombre
+
+  .region
+    - if current_admin
+      .admin-controls
+        = link_to 'Editar', edit_categoria_path(@categoria), class: 'btn btn-success'
+    = link_to 'Regresar', categorias_path, class: 'btn btn-warning'

@@ -44,7 +44,6 @@ gem "compass-rails", :group => :assets
 gem "rails_layout", :group => :development
 gem "rvm-capistrano"
 gem "haml"
-gem "haml-rails"
 gem "will_paginate"
 gem "inherited_resources"
 gem "page_title_helper"

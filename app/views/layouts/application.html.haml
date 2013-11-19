@@ -2,7 +2,7 @@
 %html
   %head
     %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
-    %title= content_for?(:title) ? yield(:title) : 'Maná | Ropa para bebés'
+    %title= page_title
     %meta{:name => "description", :content => "#{content_for?(:description) ? yield(:description) : 'Maná | Ropa para bebés'}"}
     = stylesheet_link_tag "application", media: "all"
     = favicon_link_tag '/ico/mana-icon-144.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144'

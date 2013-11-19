@@ -1,0 +1,27 @@
+#region-productos.container
+  .region
+    .region-title
+      %h1= page_title!('producto')
+
+  .region
+    %p
+      %b Nombre:
+      = @producto.nombre
+    %p
+      %b Precio en oferta:
+      = @producto.precio_en_oferta
+    %p
+      %b Precio normal:
+      = @producto.precio_normal
+    %p
+      %b Codigo:
+      = @producto.codigo
+    %p
+      %b Foto:
+      = @producto.foto
+
+  .region
+    - if current_admin
+      .admin-controls
+        = link_to 'Editar', edit_producto_path(@producto), class: 'btn btn-success'
+    = link_to 'Regresar', productos_path, class: 'btn btn-warning'

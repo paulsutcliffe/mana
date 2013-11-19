@@ -1,0 +1,25 @@
+#region-categorias.container
+
+  .region
+    .region-title
+      %h1= page_title!('Listando categorias')
+
+    .region
+      - if current_admin
+        .admin-control
+          = link_to 'Crear Categoria', new_categoria_path, class: 'btn btn-primary'
+
+      .table-responsive
+        %table.table
+          %tr
+            %th Nombre
+            %th
+            %th
+            %th
+
+          - @categorias.each do |categoria|
+            %tr
+              %td= categoria.nombre
+              %td= link_to 'Ver', categoria, class: 'btn btn-info'
+              %td= link_to 'Editar', edit_categoria_path(categoria), class: 'btn btn-success'
+              %td= link_to 'Eliminar', categoria, :method => :delete, :data => { :confirm => '¿Estás Seguro?' }, class: 'btn btn-danger'
